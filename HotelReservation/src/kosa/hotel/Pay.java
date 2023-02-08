@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Pay {
-	private Reservation reservation;
-	private String payType;
-	private LocalDate nowDate = LocalDate.now();
-	private LocalTime nowTime = LocalTime.now();
-	private boolean isPayed;
+	private Reservation reservation; 
+	private String payType; // 지불 유형
+	private LocalDate nowDate = LocalDate.now(); // 현재 날짜 
+	private LocalTime nowTime = LocalTime.now(); // 현재 시간 
+	private boolean isPayed; // 지불 된 건인지 체
 	
 	public Pay() {}
 
@@ -20,12 +20,6 @@ public class Pay {
 		this.nowTime = nowTime;
 		this.isPayed = isPayed;
 	}
-	
-	public void showReceipt() {
-//		if(reservation.getCheckout()==true && isPayed == false) {
-			System.out.println("[ 영수증을 출력합니다. ]");
-		}
-//	}
 
 	public Reservation getReservation() {
 		return reservation;

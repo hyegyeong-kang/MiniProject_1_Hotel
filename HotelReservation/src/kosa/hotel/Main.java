@@ -3,8 +3,9 @@ package kosa.hotel;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		System.out.println("<5성급 '다놀자' 호텔 예약사이트 입니다.>");
+		
+		
 	}
 
 }
