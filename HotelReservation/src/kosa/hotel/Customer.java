@@ -1,37 +1,19 @@
 package kosa.hotel;
 
 public class Customer {
-	private String cusId;
-	private String cusPw;
 	private String cusName;
 	private String phoneNo;
+	private String birth;
 	private String email;
 	
 	public Customer() {}
 
-	public Customer(String cusId, String cusPw, String cusName, String phoneNo, String email) {
+	public Customer(String cusName, String phoneNo, String birth, String email) {
 		super();
-		this.cusId = cusId;
-		this.cusPw = cusPw;
 		this.cusName = cusName;
 		this.phoneNo = phoneNo;
+		this.birth = birth;
 		this.email = email;
-	}
-
-	public String getCusId() {
-		return cusId;
-	}
-
-	public void setCusId(String cusId) {
-		this.cusId = cusId;
-	}
-
-	public String getCusPw() {
-		return cusPw;
-	}
-
-	public void setCusPw(String cusPw) {
-		this.cusPw = cusPw;
 	}
 
 	public String getCusName() {
@@ -50,6 +32,14 @@ public class Customer {
 		this.phoneNo = phoneNo;
 	}
 
+	public String getBirth() {
+		return birth;
+	}
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -57,5 +47,5 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 }

@@ -3,6 +3,10 @@ package kosa.hotel;
 public class ReservationManager {
 
 	public ReservationManager() {}
+	
+	public void makeReservation() {
+		//예약 진행
+	}
 
 	public void checkReservation() {
 		//예약 리스트 출력

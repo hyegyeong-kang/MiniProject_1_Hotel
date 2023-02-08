@@ -8,15 +8,7 @@ public class Main {
 		
 		CustomerManager cm = new CustomerManager();
 		
-		cm.joinCustomer();
-		cm.joinCustomer();
-		
-		cm.showCustomer();
-		cm.updateCustomer();
-		cm.showCustomer();
-//		cm.login();
-		cm.deleteCustomer();
-		cm.showCustomer();
+		cm.addCustomer();
 
 	}
 
