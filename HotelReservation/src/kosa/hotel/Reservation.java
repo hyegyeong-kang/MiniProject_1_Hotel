@@ -13,10 +13,9 @@ public class Reservation {
 	
 	public Reservation() {}
 	
-	public Reservation(String num, Customer customer, Room room, Date checkInDate, Date checkOutDate, int roomPrice,
+	public Reservation(Customer customer, Room room, Date checkInDate, Date checkOutDate, int roomPrice,
 			boolean state) {
 		super();
-		this.num = num;
 		this.customer = customer;
 		this.room = room;
 		this.checkInDate = checkInDate;
@@ -25,14 +24,6 @@ public class Reservation {
 		this.state = state;
 	}
 	
-
-	public String getNum() {
-		return num;
-	}
-
-	public void setNum(String num) {
-		this.num = num;
-	}
 
 	public Customer getCustomer() {
 		return customer;

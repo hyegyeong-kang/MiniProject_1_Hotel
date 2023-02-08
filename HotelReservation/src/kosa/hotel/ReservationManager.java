@@ -1,8 +1,27 @@
 package kosa.hotel;
 
+import java.util.Scanner;
+
 public class ReservationManager {
+	Scanner sc = new Scanner(System.in);
+	Reservation r;
 	
 	public ReservationManager() {}
+	
+	public void makeReservation(Customer customer) {
+		int totalPrice = 0;
+		boolean roomState = false;
+		System.out.println("객실 타입 선택해주세요.");
+		System.out.println("1. 디럭스 2. 스위트");
+		String roomType = sc.nextLine();
+		System.out.println("입실날짜 입력해주세요. ex) 20230201");
+		String startDate = sc.nextLine();
+		System.out.println("퇴실날짜 입력해주세요.ex) 20230208");
+		String endDate = sc.nextLine();
+		r = new Reservation(customer, "객실정보", startDate, endDate, totalPrice, roomState = true);
+		
+		
+	}
 	
 	public void checkReservation() {
 		//예약 리스트 출력
