@@ -9,6 +9,7 @@ public class Main {
 		CustomerManager cm = new CustomerManager();
 		
 		cm.joinCustomer();
+		cm.login();
 
 	}
 
