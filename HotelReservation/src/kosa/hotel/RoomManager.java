@@ -30,16 +30,20 @@ public class RoomManager {
 				switch(answer) {
 				case "1" :
 					rm.makeReservation();
-					
 					break;
+					
 				case "2" :
 					System.out.println("예약 진행을 취소하였습니다.");
 					break;
+					
 				default :
 					System.out.println("없는 메뉴번호 입니다. 잘못 입력하셨습니다.");
+					break;
 				}
 			}
+			
 			break;
+			
 		case "2"  : 
 			System.out.println("스위트 남은 수량 : " + room.getRoomAmount());
 			System.out.println("\n예약을 진행하시겠습니까?");
@@ -58,8 +62,10 @@ public class RoomManager {
 				
 			default :
 				System.out.println("없는 메뉴번호 입니다. 잘못 입력하셨습니다.");
-			break;
+				break;
 			}
+			
+			break;
 		}
 		
 	}
