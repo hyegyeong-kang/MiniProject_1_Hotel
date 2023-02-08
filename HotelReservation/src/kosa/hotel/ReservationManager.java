@@ -19,7 +19,7 @@ public class ReservationManager {
 		System.out.println("퇴실날짜 입력해주세요.ex) 20230208");
 		String endDate = sc.nextLine();
 		r = new Reservation(customer, "객실정보", startDate, endDate, totalPrice, roomState = true);
-		
+		// 위줄 에러나는 이유는 객실정보 Room 객체를 안넣어기 때문이다.
 		
 	}
 	
