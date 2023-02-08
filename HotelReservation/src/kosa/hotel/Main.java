@@ -12,15 +12,9 @@ public class Main {
 	static ReservationManager rm = new ReservationManager();
 	
 	public static void main(String[] args) {
-		
-		 
-		
+
 		System.out.println("1.회원 2.비회원");
 		String memChk = sc.nextLine();
-		
-	
-		
-		
 		
 		Customer c = LoginChk(memChk);
 		if (c != null) { // 로그인, 비회원 로그인 했다는 소리
