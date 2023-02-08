@@ -23,7 +23,7 @@ public class Main {
 		
 		
 		Customer c = LoginChk(memChk);
-		if (LoginChk(memChk) instanceof Customer) {
+		if (c != null) { // 로그인, 비회원 로그인 했다는 소리
 			System.out.println("1.객실 예약 2.예약 조회 3.예약 변경 4.예약 취소 5.종료");
 			String chk = sc.nextLine();
 			switch(chk) {
