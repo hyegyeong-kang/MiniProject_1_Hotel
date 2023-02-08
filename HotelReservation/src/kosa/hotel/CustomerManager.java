@@ -13,19 +13,19 @@ public class CustomerManager {
 	public CustomerManager() {}
 
 	public void joinCustomer() { // 회원가입 
-		System.out.print("사용하실 아이디를 입력하세요 : ");
+		System.out.print("=> 사용하실 아이디를 입력하세요 : ");
 		String id = sc.nextLine();
 		
-		System.out.print("사용하실 비밀번호를 입력하세요 : ");
+		System.out.print("=> 사용하실 비밀번호를 입력하세요 : ");
 		String pw = sc.nextLine();
 		
-		System.out.print("이름을 입력하세요 : ");
+		System.out.print("=> 이름을 입력하세요 : ");
 		String name = sc.nextLine();
 		
-		System.out.print("전화번를 입력하세요 : ");
+		System.out.print("=> 전화번를 입력하세요 : ");
 		String phoneNo = sc.nextLine();
 		
-		System.out.print("이메일을 입력하세요 : ");
+		System.out.print("=> 이메일을 입력하세요 : ");
 		String email = sc.nextLine();
 		
 		customers.add(new Customer(id, pw, name, phoneNo, email));
@@ -38,6 +38,29 @@ public class CustomerManager {
 	}
 	
 	public void deleteCustomer() { // 회원 탈퇴 
+		
+		// 로그인 되어있는지 체크 하는 로직 필요.
+		// 로그인 되어있다면 로그인 된 고객 탈퇴 진행?
+		System.out.println("정말 탈퇴하시겠습니까?");
+		System.out.println("1.예   2.아니오");
+		System.out.print("=> 입력(번호) : ");
+		
+		String menu = sc.nextLine();
+		
+		switch(menu) {
+		case "1" :
+			
+			break;
+			
+		case "2" :
+			
+			break;
+			
+		default :
+			System.out.println("메뉴를 잘못 입력하셨습니다.");
+			break;
+		}
+		
 	}
 	
 	public void login() { // 로그인 
