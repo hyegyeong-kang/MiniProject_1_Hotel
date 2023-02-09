@@ -68,7 +68,17 @@ public class ReservationManager {
 		// 예약 번호를 입력받아서 예약리스트에 해당 예약번호가 있다면 
 		// 체크인 완료 
 		System.out.println("예약번호를 입력하세요.");
-		String num = sc.nextLine();
+		
+		String answer = sc.nextLine();
+		
+		for (int i = 0; i < reservations.size(); i++) {
+			  if (reservations.get(i).getReservationNo().equals(answer)) {
+				  reservations.get(i).setState(true);
+				  System.out.println("체크인을 완료하였습니다.");
+			  } else {
+				  System.out.println("예약 번호가 존재하지 않습니다.");
+			  }
+		}
 		
 	}
 	
@@ -79,6 +89,7 @@ public class ReservationManager {
 		for (int i = 0; i < reservations.size(); i++) {
 			if (reservations.get(i).getRoom().getRoomNo().equals(num)) {
 				reservations.remove(i);
+				System.out.println("체크아웃을 완료하였습니다.");
 			}
 		}
 	}
