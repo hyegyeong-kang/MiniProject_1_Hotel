@@ -6,7 +6,7 @@ public class Reservation {
 	private Room room;
 	private String checkInDate;
 	private String checkOutDate;
-	private int roomPrice; // 객실 비용 * 일수
+	private long roomPrice; // 객실 비용 * 일수
 	private boolean state; // 예약 상태
 	
 	public Reservation() {}
