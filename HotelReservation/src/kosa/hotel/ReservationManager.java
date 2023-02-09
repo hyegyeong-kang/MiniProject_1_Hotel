@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class ReservationManager {
 	Scanner sc = new Scanner(System.in);
 	Reservation r;
+
+	Room room1 = new Room("스위트룸", "714", 50000, 3, 1);
+	Room room2 = new Room("디럭스룸", "815", 100000, 2, 1);
 	
 	public ReservationManager() {}
 	
@@ -18,9 +21,13 @@ public class ReservationManager {
 		String startDate = sc.nextLine();
 		System.out.println("퇴실날짜 입력해주세요.ex) 20230208");
 		String endDate = sc.nextLine();
-		r = new Reservation(customer, "객실정보", startDate, endDate, totalPrice, roomState = true);
-		// 위줄 에러나는 이유는 객실정보 Room 객체를 안넣어기 때문이다.
-		
+		switch(roomType) {
+		case "1":
+			new Reservation(customer, room1, startDate, endDate, totalPrice, roomState);
+			break;
+		case "2":
+			new Reservation(customer, room2, startDate, endDate, totalPrice, roomState);
+		}		
 	}
 	
 	public void checkReservation() {
@@ -37,12 +44,15 @@ public class ReservationManager {
 		// 리스트에서 삭제
 	}
 
-	public void checkIn(String reservationNo) {
+	public void checkIn() {
 		// 예약 번호를 입력받아서 예약리스트에 해당 예약번호가 있다면 
 		// 체크인 완료 
+		System.out.println("예약번호를 입력하세요.");
+		String num = sc.nextLine();
+		
 	}
 	
-	public void checkOut(String roomNum) {
+	public void checkOut() {
 		// 객실번호를 받아서 해당 객실 번호의 예약 상태 업데이트(다시 예약할 수 있는 방으로 돌아가는 것)
 	}
 	

@@ -1,19 +1,17 @@
 package kosa.hotel;
 
-import java.util.Date;
-
 public class Reservation {
 	private String num;
 	private Customer customer;
 	private Room room;
-	private Date checkInDate;
-	private Date checkOutDate;
+	private String checkInDate;
+	private String checkOutDate;
 	private int roomPrice; // 객실 비용 * 일수
 	private boolean state; // 예약 상태
 	
 	public Reservation() {}
 	
-	public Reservation(Customer customer, Room room, Date checkInDate, Date checkOutDate, int roomPrice,
+	public Reservation(Customer customer, Room room, String checkInDate, String checkOutDate, int roomPrice,
 			boolean state) {
 		super();
 		this.customer = customer;
@@ -40,19 +38,19 @@ public class Reservation {
 		this.room = room;
 	}
 
-	public Date getCheckInDate() {
+	public String getCheckInDate() {
 		return checkInDate;
 	}
 
-	public void setCheckInDate(Date checkInDate) {
+	public void setCheckInDate(String checkInDate) {
 		this.checkInDate = checkInDate;
 	}
 
-	public Date getCheckOutDate() {
+	public String getCheckOutDate() {
 		return checkOutDate;
 	}
 
-	public void setCheckOutDate(Date checkOutDate) {
+	public void setCheckOutDate(String checkOutDate) {
 		this.checkOutDate = checkOutDate;
 	}
 
