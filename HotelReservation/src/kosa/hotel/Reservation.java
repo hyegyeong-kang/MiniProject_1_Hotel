@@ -1,5 +1,7 @@
 package kosa.hotel;
 
+import java.time.LocalDate;
+
 public class Reservation {
 	private String reservationNo;
 	
@@ -26,6 +28,22 @@ public class Reservation {
 		this.reservationNo = reservationNo;
 	}
 
+	public String getCheckInDate() {
+		return checkInDate;
+	}
+
+	public void setCheckInDate(String checkInDate) {
+		this.checkInDate = checkInDate;
+	}
+
+	public String getCheckOutDate() {
+		return checkOutDate;
+	}
+
+	public void setCheckOutDate(String checkOutDate) {
+		this.checkOutDate = checkOutDate;
+	}
+
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -42,21 +60,7 @@ public class Reservation {
 		this.room = room;
 	}
 
-	public String getCheckInDate() {
-		return checkInDate;
-	}
-
-	public void setCheckInDate(String checkInDate) {
-		this.checkInDate = checkInDate;
-	}
-
-	public String getCheckOutDate() {
-		return checkOutDate;
-	}
-
-	public void setCheckOutDate(String checkOutDate) {
-		this.checkOutDate = checkOutDate;
-	}
+	
 
 	public int getRoomPrice() {
 		return roomPrice;
