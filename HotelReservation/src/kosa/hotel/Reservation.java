@@ -1,18 +1,21 @@
 package kosa.hotel;
 
 public class Reservation {
-	private String num;
+	private String reservationNo;
+	
+
 	private Customer customer;
 	private Room room;
 	private String checkInDate;
 	private String checkOutDate;
 	private int roomPrice; // 객실 비용 * 일수
 	private boolean state; // 예약 상태
+	private String ReservationNo;
 	
 	public Reservation() {}
 	
 	public Reservation(Customer customer, Room room, String checkInDate, String checkOutDate, int roomPrice,
-			boolean state) {
+			boolean state, String reservationNo) {
 		super();
 		this.customer = customer;
 		this.room = room;
@@ -20,6 +23,7 @@ public class Reservation {
 		this.checkOutDate = checkOutDate;
 		this.roomPrice = roomPrice;
 		this.state = state;
+		this.reservationNo = reservationNo;
 	}
 
 	public Customer getCustomer() {
@@ -68,6 +72,14 @@ public class Reservation {
 
 	public void setState(boolean state) {
 		this.state = state;
+	}
+	
+	public String getReservationNo() {
+		return reservationNo;
+	}
+
+	public void setReservationNo(String reservationNo) {
+		this.reservationNo = reservationNo;
 	}
 	
 }

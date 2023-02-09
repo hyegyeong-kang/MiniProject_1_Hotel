@@ -29,7 +29,7 @@ public class RoomManager {
 				
 				switch(answer) {
 				case "1" :
-					rm.makeReservation();
+
 					break;
 					
 				case "2" :
@@ -53,7 +53,7 @@ public class RoomManager {
 			
 			switch(answer) {
 			case "1" :
-				rm.makeReservation();
+				//rm.makeReservation();
 				break;
 				
 			case "2" :
