@@ -3,7 +3,9 @@ package kosa.hotel;
 public class Admin {
 	private String adminName;
 	private String adminNo;
-	
+
+
+
 	public Admin() {}
 
 	public Admin(String adminName, String adminNo) {
@@ -28,4 +30,6 @@ public class Admin {
 		this.adminNo = adminNo;
 	}
 
+
 }
+

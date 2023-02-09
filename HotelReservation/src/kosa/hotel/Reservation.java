@@ -23,7 +23,6 @@ public class Reservation {
 		this.roomPrice = roomPrice;
 		this.state = state;
 	}
-	
 
 	public Customer getCustomer() {
 		return customer;
