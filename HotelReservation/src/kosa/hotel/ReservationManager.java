@@ -1,5 +1,7 @@
 package kosa.hotel;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -36,6 +38,26 @@ public class ReservationManager {
 		System.out.println("예약 번호: " + rNo);
 	}
 	
+	public void printAllReservation() {
+		System.out.println("고객의 전체 예약 내역 조회");
+		
+		for(Reservation reservation : reservations) {
+			System.out.println("고객 성함 : " + reservation.getCustomer().getCusName());
+			System.out.println("고객 전화번호 : " + reservation.getCustomer().getPhoneNo());
+			System.out.println("고객 생일 : " + reservation.getCustomer().getBirth());
+			System.out.println("고객 이메일 : " + reservation.getCustomer().getEmail());
+			System.out.println("예약 객실 타입 : " + reservation.getRoom().getRoomType());
+			System.out.println("예약 객실 번호 : " + reservation.getRoom().getRoomNo());
+			System.out.println("예약 객실 가격 : " + reservation.getRoom().getPrice());
+			System.out.println("체크인 여부 : " + reservation.isState());
+			
+			if (reservation.isState() == true) {
+				System.out.println("체크인 날짜 : " + reservation.getCheckInDate());
+				System.out.println("체크인 (예정)날짜 : " + reservation.getCheckOutDate());
+			}
+		}
+	}
+	
 	public void checkReservation(Customer customer) {
 		System.out.println("예약 번호를 입력해주세요.");
 		String rNo = sc.nextLine();
@@ -50,7 +72,6 @@ public class ReservationManager {
 		System.out.println("");
 	}
 	
-	
 	public void cancelReservation() {
 		  System.out.println("예약번호를 입력해주세요.");
 		  String answer = sc.nextLine();  
@@ -62,7 +83,19 @@ public class ReservationManager {
 				  System.out.println("예약 번호가 존재하지 않습니다.");
 			  }
 		  }
-		}
+	}
+	
+	public void cancleNoshowReservation() {
+		// 노쇼 고객 예약 취소처리
+		LocalDate now = LocalDate.now();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초");
+		for (int i = 0; i < reservations.size(); i++) {
+			  if (reservations.get(i).isState() == false && reservations.get(i).getCheckInDate().isBefore(now)) {
+				  reservations.remove(i);
+				  System.out.println("no-show 고객의 예약을 취소하였습니다.");
+			  } 
+		  }
+	}
 
 	public void checkIn() {
 		// 예약 번호를 입력받아서 예약리스트에 해당 예약번호가 있다면 
