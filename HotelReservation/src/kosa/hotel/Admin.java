@@ -4,9 +4,9 @@ public class Admin {
 	private String adminName;
 	private String adminNo;
 
-
-
 	public Admin() {}
+	
+	Admin admin = new Admin("admin", "1234");
 
 	public Admin(String adminName, String adminNo) {
 		super();
