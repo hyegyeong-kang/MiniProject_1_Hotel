@@ -6,9 +6,9 @@ public class Room {
 	private int price;
 	private int maxPeopleNum;
 	private int roomAmount;
-
+	
 	public Room() {}
-
+	
 	public Room(String roomType, String roomNo, int price, int maxPeopleNum, int roomAmount) {
 		super();
 		this.roomType = roomType;
