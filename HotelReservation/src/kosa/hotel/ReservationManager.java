@@ -75,6 +75,7 @@ public class ReservationManager {
 			  if (reservations.get(i).getReservationNo().equals(answer)) {
 				  reservations.get(i).setState(true);
 				  System.out.println("체크인을 완료하였습니다.");
+				  System.out.println("객실 번호: " + reservations.get(i).getRoom().getRoomNo());
 			  } else {
 				  System.out.println("예약 번호가 존재하지 않습니다.");
 			  }
