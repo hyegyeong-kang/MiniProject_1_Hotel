@@ -11,7 +11,7 @@ public class CustomerManager {
 	
 	public CustomerManager() {}
 
-	public void addCustomer() { // 고객 등록
+	public Customer addCustomer() { // 고객 등록
 		
 		System.out.print("=> 이름을 입력하세요 : ");
 		String name = sc.nextLine();
@@ -25,10 +25,12 @@ public class CustomerManager {
 		System.out.print("=> 생일을 입력하세요. : ");
 		String birth = sc.nextLine();
 		
-		customers.add(new Customer(name, phoneNo, birth, email));
+		Customer c = new Customer(name, phoneNo, birth, email);
+		customers.add(c);
 		
 		System.out.println("\"" + name + "\"" + "님의 정보 등록이 완료되었습니다.\n");
 		
+		return c;
 	}
 	
 }
