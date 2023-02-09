@@ -1,10 +1,10 @@
 package kosa.hotel;
 
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -146,8 +146,8 @@ public class ReservationManager {
 	}
 	
 	public long countDates(String start, String end) throws ParseException {
-		Date startDate = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(start);
-        Date endDate = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(end);
+		Date startDate = new SimpleDateFormat("yyyy/MM/dd").parse(start);
+        Date endDate = new SimpleDateFormat("yyyy/MM/dd").parse(end);
         
         long diffSec = (endDate.getTime() - startDate.getTime()) / 1000; //초 차이
         long diffDays = diffSec / (24*60*60); //일자수 차이
