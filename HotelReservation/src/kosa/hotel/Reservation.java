@@ -1,22 +1,17 @@
 package kosa.hotel;
 
-import java.time.LocalDate;
-
 public class Reservation {
 	private String reservationNo;
-	
-
 	private Customer customer;
 	private Room room;
 	private String checkInDate;
 	private String checkOutDate;
 	private int roomPrice; // 객실 비용 * 일수
 	private boolean state; // 예약 상태
-	private String ReservationNo;
 	
 	public Reservation() {}
 	
-	public Reservation(Customer customer, Room room, String checkInDate, String checkOutDate, int roomPrice,
+	public Reservation(Customer customer, Room room, String checkInDate, String checkOutDate, long roomPrice,
 			boolean state, String reservationNo) {
 		super();
 		this.customer = customer;
@@ -62,11 +57,11 @@ public class Reservation {
 
 	
 
-	public int getRoomPrice() {
+	public long getRoomPrice() {
 		return roomPrice;
 	}
 
-	public void setRoomPrice(int roomPrice) {
+	public void setRoomPrice(long roomPrice) {
 		this.roomPrice = roomPrice;
 	}
 

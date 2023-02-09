@@ -1,5 +1,7 @@
 package kosa.hotel;
 
+import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,24 +19,38 @@ public class ReservationManager {
 	public ReservationManager() {}
 	
 	public void makeReservation(Customer customer) {
-		int totalPrice = 0;
+		long totalPrice = 0;
 		boolean roomState = false;
 		System.out.println("=> 객실 타입 선택해주세요.");
 		System.out.print("1. 디럭스 2. 스위트");
 		String roomType = sc.nextLine();
-		System.out.print("=> 입실날짜 입력해주세요. ex) 20230201 :");
+		System.out.print("=> 입실날짜 입력해주세요. ex) 2023/02/01 :");
 		String startDate = sc.nextLine();
-		System.out.print("=> 퇴실날짜 입력해주세요.ex) 20230208 : ");
+		System.out.print("=> 퇴실날짜 입력해주세요.ex) 2023/02/08 : ");
 		String endDate = sc.nextLine();
 		String rNo = customer.getPhoneNo() + startDate; // 예약 번호 = 핸드폰번호 + 입실일
 		switch(roomType) {
 		case "1":
+			try {
+				totalPrice = countDates(startDate, endDate) * room1.getPrice();
+				System.out.println("숙박 가격: " + totalPrice);
+			} catch (ParseException e) {
+				System.out.println("날짜 양식에 맞게 입력하세요.");
+				e.printStackTrace();
+			}
 			reservations.add(new Reservation(customer, room1, startDate, endDate, totalPrice, roomState, rNo));
 			break;
 		case "2":
+			try {
+				totalPrice = countDates(startDate, endDate) * room2.getPrice();
+				System.out.println("숙박 가격: " + totalPrice);
+			} catch (ParseException e) {
+				System.out.println("날짜 양식에 맞게 입력하세요.");
+				e.printStackTrace();
+			}
 			reservations.add(new Reservation(customer, room2, startDate, endDate, totalPrice, roomState, rNo));
 		}
-		System.out.println("!!!!!!예약이 성공적으로 이루어졌습니다!!!!! 예약번호를 꼭 확인 부탁드립니다.");
+		System.out.println("예약이 성공적으로 이루어졌습니다. 예약번호를 꼭 확인 부탁드립니다.");
 		System.out.println("예약 번호: " + rNo);
 	}
 	
@@ -126,6 +142,17 @@ public class ReservationManager {
 				System.out.println("체크아웃을 완료하였습니다.");
 			}
 		}
+	}
+	
+	public long countDates(String start, String end) throws ParseException {
+		Date startDate = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(start);
+        Date endDate = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(end);
+        
+        long diffSec = (endDate.getTime() - startDate.getTime()) / 1000; //초 차이
+        long diffDays = diffSec / (24*60*60); //일자수 차이
+        
+        System.out.print("일수!!!!!!!!!!!" + diffDays);
+		return diffDays;
 	}
 	
 }

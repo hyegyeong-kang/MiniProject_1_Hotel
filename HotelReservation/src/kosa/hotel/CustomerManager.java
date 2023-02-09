@@ -16,7 +16,7 @@ public class CustomerManager {
 		System.out.print("=> 이름을 입력하세요 : ");
 		String name = sc.nextLine();
 		
-		System.out.print("=> 전화번를 입력하세요 : ");
+		System.out.print("=> 전화번호를 입력하세요 : ");
 		String phoneNo = sc.nextLine();
 		
 		System.out.print("=> 이메일을 입력하세요 : ");
