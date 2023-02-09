@@ -112,6 +112,7 @@ public class ReservationManager {
 			  } 
 		  }
 	}
+	
 
 	public void checkIn() {
 		// 예약 번호를 입력받아서 예약리스트에 해당 예약번호가 있다면 
